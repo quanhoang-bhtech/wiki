@@ -14,14 +14,18 @@ services:
     ports:
       - "8640:5432"
   wiki:
-    container_name: wiki-app
+    container_name: wiki-app-dev
     build:
       context: .
-      dockerfile: dev/containers/Dockerfile
+      dockerfile: Dockerfile
     depends_on:
       - wikidb
     ports:
-      - "3000:3000"
-    volumes:
-      - /wiki/node_modules
-      - /wiki/.git
+      - "8636:3000"
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: wikidb
+      DB_PORT: 5432
+      DB_USER: wikijs
+      DB_PASS: wikijsrocks
+      DB_NAME: wiki

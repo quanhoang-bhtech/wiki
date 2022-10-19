@@ -32,6 +32,7 @@
                   :key='stg.key'
                   :value='stg.key'
                   :color='stg.strategy.color'
+                  :class='{ ["login-"+ stg.key] : true }'
                   )
                   v-avatar.mr-3(tile, size='24', v-html='stg.strategy.icon')
                   span.text-none {{stg.displayName}}
@@ -718,7 +719,15 @@ export default {
         width: 100%;
       }
     }
+    .v-list{
+      .v-item-group{
+        .theme--light.login-38188b48-24b8-4928-9a39-2f4c4fdb1e8f{
+          color: #EEE !important;
+          background-color: #CD0828 !important;
+        }
+      }
 
+    }
     &-logo {
       padding: 12px 0 0 12px;
       width: 58px;

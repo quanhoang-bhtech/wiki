@@ -369,7 +369,7 @@ export default {
     this.$root.$on('pageDelete', () => {
       this.pageDelete()
     })
-    this.isDevMode = siteConfig.devMode === true
+    this.isDevMode = false
   },
   methods: {
     searchFocus () {

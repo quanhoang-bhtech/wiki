@@ -140,7 +140,7 @@ export default {
     _.delay(() => {
       this.$refs.adminEmailInput.focus()
     }, 500)
-    this.isDevMode = siteConfig.devMode === true
+    this.isDevMode = false
   },
   methods: {
     async install () {
