@@ -48,14 +48,14 @@
             v-tooltip(bottom)
               template(v-slot:activator='{ on }')
                 v-btn.bsf-ref.ml-2.mr-0(icon, v-on='on', href='https://buildingsmart.fi/')
-                  v-avatar(tile, size='34', @click='goToMain')
-                    v-img(src='bSF_home.png')
+                  v-avatar(tile, size='24', @click='goToMain')
+                    v-img(src='bsf_home.png')
               span {{'Building Smart'}}
             v-tooltip(bottom)
               template(v-slot:activator='{ on }')
                 v-btn.ml-2.mr-0(icon, v-on='on', href='https://drive.buildingsmart.fi/')
-                  v-avatar(tile, size='34', @click='goToDrive')
-                    v-img(src='bSF_Drive.png')
+                  v-avatar(tile, size='24', @click='goToDrive')
+                    v-img(src='bsf_drive.png')
               span {{'Building Smart Drive'}}
       v-flex(md4, v-if='$vuetify.breakpoint.mdAndUp')
         v-toolbar.nav-header-inner(color='black', dark, flat)
