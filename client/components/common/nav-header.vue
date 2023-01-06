@@ -45,6 +45,18 @@
           //-         v-list-item-subtitle.overline.grey--text.text--lighten-2 Coming soon
           v-toolbar-title(:class='{ "mx-3": $vuetify.breakpoint.mdAndUp, "mx-1": $vuetify.breakpoint.smAndDown }')
             span.subheading {{title}}
+            v-tooltip(bottom)
+              template(v-slot:activator='{ on }')
+                v-btn.bsf-ref.ml-2.mr-0(icon, v-on='on', href='https://buildingsmart.fi/')
+                  v-avatar(tile, size='34', @click='goToMain')
+                    v-img(src='bSF_home.png')
+              span {{'Building Smart'}}
+            v-tooltip(bottom)
+              template(v-slot:activator='{ on }')
+                v-btn.ml-2.mr-0(icon, v-on='on', href='https://drive.buildingsmart.fi/')
+                  v-avatar(tile, size='34', @click='goToDrive')
+                    v-img(src='bSF_Drive.png')
+              span {{'Building Smart Drive'}}
       v-flex(md4, v-if='$vuetify.breakpoint.mdAndUp')
         v-toolbar.nav-header-inner(color='black', dark, flat)
           slot(name='mid')
@@ -477,6 +489,15 @@ export default {
     },
     goHome () {
       window.location.assign('/')
+    },
+    goTo (url) {
+      window.open(url, '_blank');
+    },
+    goToDrive(){
+      goTo('https://drive.buildingsmart.fi/')
+    },
+    goToMain(){
+      goTo('https://buildingsmart.fi/')
     }
   }
 }
@@ -506,6 +527,9 @@ export default {
   &-inner {
     .v-toolbar__content {
       padding: 0;
+    }
+    .bsf-ref {
+      margin-left: 50px !important;
     }
   }
 
